@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <case a="1" b="2" result="3"/>
+  <case a="1" b="4" result="5"/>
+  <case a="1" b="3" result="4"/>
+</root>

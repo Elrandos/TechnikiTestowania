@@ -1,0 +1,25 @@
+.video-play{
+    background-color: rgba(0,0,0,.12);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    cursor: pointer;
+}
+
+.video-play-icon{
+    position: absolute;
+    background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0OCIgaGVpZ2h0PSI0OCIgdmlld0JveD0iMCAwIDQ4IDQ4IiBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMjQgNEMxMi45NSA0IDQgMTIuOTUgNCAyNHM4Ljk1IDIwIDIwIDIwIDIwLTguOTUgMjAtMjBTMzUuMDUgNCAyNCA0em0tNCAyOVYxNWwxMiA5LTEyIDl6Ii8+PC9zdmc+);
+    background-size: 60px 60px;
+    bottom: 0;
+    color: #fff;
+    left: 0;
+    height: 60px;
+    width: 60px;
+    margin: auto;
+    opacity: 0.8;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}

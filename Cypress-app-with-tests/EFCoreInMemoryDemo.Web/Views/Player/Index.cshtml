@@ -1,0 +1,62 @@
+﻿@model IEnumerable<EFCoreInMemoryDemo.Web.Models.PlayerModel>
+
+
+@{
+    ViewData["Title"] = "Player";
+}
+
+<h2>Player</h2>
+
+<p>
+    <a asp-action="Add">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Age)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Game)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Age)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Game)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Open</a>
+                <form asp-action="Delete">
+                    <input type="hidden" value="@item.ID" name="id" />
+                    <input type="submit" value="Delete" />
+                </form>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
