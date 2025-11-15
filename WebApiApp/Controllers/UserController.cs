@@ -36,6 +36,7 @@ namespace TestAutoryzacji.Controllers
         [HttpGet]
         public IActionResult GetAll()
         {
+            //
             var users = _userService.GetAll();
             return Ok(users);
         }
