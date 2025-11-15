@@ -1,0 +1,33 @@
+name: .NET Core CI (Build & Test)
+
+on:
+  push:
+    branches: [ main, master ] # Uruchom przy push do main lub master
+  pull_request:
+    branches: [ main, master ] # Uruchom przy Pull Request
+
+jobs:
+  build:
+    # Uruchom na najnowszym systemie Windows, ponieważ jest to projekt VS/Windows
+    runs-on: windows-latest 
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+      
+    # Konfiguracja środowiska .NET (dostosuj wersję)
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '8.0.x' # Użyj pożądanej wersji .NET (np. 6.0.x, 7.0.x, 8.0.x)
+        
+    - name: Restore dependencies
+      # Użyj ścieżki do pliku solution (.sln)
+      run: dotnet restore TechnikiTestowania.sln
+      
+    - name: Build solution
+      run: dotnet build TechnikiTestowania.sln --no-restore
+      
+    # Ten krok znajdzie i uruchomi testy w Twoich projektach App.BLLTests i AppCore.BLLTests
+    - name: Run tests
+      run: dotnet test TechnikiTestowania.sln --no-build --verbosity normal
